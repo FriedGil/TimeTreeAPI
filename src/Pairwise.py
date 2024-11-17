@@ -35,9 +35,13 @@ class Pairwise:
 
     def __repr__(self) -> str:
         return (
-            f"Pairwise(taxon_a_id={self.taxon_a_id}, taxon_b_id={self.taxon_b_id}, "
-            f"scientific_name_a='{self.scientific_name_a}', scientific_name_b='{self.scientific_name_b}', "
-            f"all_total={self.all_total}, precomputed_age={self.precomputed_age}, "
-            f"precomputed_ci_low={self.precomputed_ci_low}, precomputed_ci_high={self.precomputed_ci_high}, "
-            f"adjusted_age={self.adjusted_age})"
-        )
+            f"Pairwise(taxon_a_id={
+                self.taxon_a_id}, taxon_b_id={
+                self.taxon_b_id}, " f"scientific_name_a='{
+                self.scientific_name_a}', scientific_name_b='{
+                    self.scientific_name_b}', " f"all_total={
+                        self.all_total}, precomputed_age={
+                            self.precomputed_age}, " f"precomputed_ci_low={
+                                self.precomputed_ci_low}, precomputed_ci_high={
+                                    self.precomputed_ci_high}, " f"adjusted_age={
+                                        self.adjusted_age})")

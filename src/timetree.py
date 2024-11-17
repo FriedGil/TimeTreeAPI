@@ -17,15 +17,14 @@ def get_pairwise(taxon_id_a: int, taxon_id_b: int) -> Pairwise:
     try:
         # Make the API request
         r = requests.get(
-            f"http://timetree.temple.edu/api/pairwise/{taxon_id_a}/{taxon_id_b}"
-        )
+            f"http://timetree.temple.edu/api/pairwise/{taxon_id_a}/{taxon_id_b}")
         r.raise_for_status()  # Will raise an exception for HTTP errors
 
         # Parse the response text and extract the precomputed age
         try:
             result = Pairwise(r.text)
             return result
-        except:
+        except BaseException:
             raise ValueError("Parsing taxon failed. Make a Github issue.")
 
     except requests.exceptions.RequestException as e:
@@ -44,12 +43,13 @@ def get_species(taxon: str) -> Taxon:
     """
     try:
         # Make the API request
-        r = requests.get(f"http://timetree.temple.edu/api/taxon/{quote(taxon)}")
+        r = requests.get(
+            f"http://timetree.temple.edu/api/taxon/{quote(taxon)}")
         r.raise_for_status()  # Will raise an exception for HTTP errors
         try:
             result = Taxon(r.json())
             return result
-        except:
+        except BaseException:
             raise ValueError("Parsing taxon failed. Make a Github issue.")
     except requests.exceptions.RequestException as e:
         raise ValueError(f"API request failed: {e}")
@@ -72,7 +72,7 @@ def get_timeline(taxon_id: int) -> Timeline:
         try:
             result = Timeline(r.text)
             return result
-        except:
+        except BaseException:
             raise ValueError("Parsing taxon failed. Make a Github issue.")
     except requests.exceptions.RequestException as e:
         raise ValueError(f"API request failed: {e}")

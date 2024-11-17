@@ -61,7 +61,10 @@ class Taxon:
 
     def __repr__(self):
         return (
-            f"Taxon(taxon_id={self.taxon_id}, c_syn_name={self.c_syn_name}, "
-            f"scientific_name={self.scientific_name}, taxonomic_rank={self.taxonomic_rank}, "
-            f"study_time_estimate={self.study_time_estimate}, is_leaf={self.is_leaf_bool})"
-        )
+            f"Taxon(taxon_id={
+                self.taxon_id}, c_syn_name={
+                self.c_syn_name}, " f"scientific_name={
+                self.scientific_name}, taxonomic_rank={
+                    self.taxonomic_rank}, " f"study_time_estimate={
+                        self.study_time_estimate}, is_leaf={
+                            self.is_leaf_bool})")
