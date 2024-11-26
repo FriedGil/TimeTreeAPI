@@ -1,23 +1,38 @@
-# TimeTree API Integration
+# TimeTreeAPI
 
-This project provides Python functions to interact with the TimeTree API. TimeTree is an online database of species divergence times based on molecular data. The project includes functions to retrieve pairwise divergence data, species-specific data, and timelines for evolutionary history.
+[GitHub Repository](https://github.com/FriedGil/TimeTreeAPI)
+
+## Overview
+
+TimeTreeAPI is a Python library designed to interact with the TimeTree API, providing tools for working with taxonomic data, divergence times, and evolutionary studies. The library includes classes and functions to process API responses, enabling seamless integration into taxonomic and evolutionary research workflows.
+
+---
 
 ## Features
 
-- **Get Pairwise Divergence**: Fetches divergence data between two species using their NCBI taxon IDs.
-- **Get Species Data**: Retrieves species-specific information based on the species name.
-- **Get Timeline Data**: Fetches a timeline of evolutionary events for a given species ID.
+- **Pairwise:** Handles pairwise taxon comparison data, including divergence estimates and confidence intervals.
+- **Taxon:** Represents individual taxonomic entities with detailed attributes and relationships.
+- **Timeline:** Processes and analyzes CSV data from TimeTree, including filtering methods based on rank or taxonomic level.
+- **API Functions:**
+  - Fetch pairwise divergence data for two species.
+  - Retrieve detailed taxonomic information for a given species.
+  - Extract timeline data for a specified taxon.
 
-## Requirements
-
-- `requests` library
-- `pandas` library
+---
 
 ## Installation
 
-To get started with this project, follow these steps:
+```bash
+pip install timetreeapi
+```
 
-1. Clone the repository:
+## Usage
 
-   ```bash
-   pip install timetreeapi
+### Pairwise Class
+
+The `Pairwise` class processes raw API output to provide structured data for pairwise taxonomic comparisons.
+
+#### Attributes
+- `taxon_a_id` and `taxon_b_id`: IDs of the two taxa.
+- `scientific_name_a` and `scientific_name_b`: Scientific names of the taxa.
+- `all_total`, `precomputed_age`, `precomputed_ci_low`, `precomputed_ci_high`, and `adjusted_age`: Various age metrics.

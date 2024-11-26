@@ -224,6 +224,12 @@ wheels = [
 ]
 
 [[package]]
+name = "pyfastaq"
+version = "3.17.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/28/9d/afbedb1994c9e9076d2bf87865ad74ed60a28cde651ce58952ac53534f28/pyfastaq-3.17.0.tar.gz", hash = "sha256:40c6dc0cea72c0ab91d10e5627a26dea1783b7e5e3edcfff8e1dc960bfd71cdc", size = 51559 }
+
+[[package]]
 name = "pylint"
 version = "3.3.1"
 source = { registry = "https://pypi.org/simple" }
@@ -240,6 +246,15 @@ sdist = { url = "https://files.pythonhosted.org/packages/63/3a/13e90e29777e695d9
 wheels = [
     { url = "https://files.pythonhosted.org/packages/4d/11/4a3f814eee14593f3cfcf7046bc765bf1646d5c88132c08c45310fc7d85f/pylint-3.3.1-py3-none-any.whl", hash = "sha256:2f846a466dd023513240bc140ad2dd73bfc080a5d85a710afdb728c420a5a2b9", size = 521768 },
 ]
+
+[[package]]
+name = "pymummer"
+version = "0.11.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyfastaq" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9f/a4/78890f48a84be3d4733262327da70220be8e11147c7d58b87ea979a0f866/pymummer-0.11.0.tar.gz", hash = "sha256:199b8391348ff83760e9f63fdcee6208f8aa29da6506ee1654f1933e60665259", size = 8163 }
 
 [[package]]
 name = "python-dateutil"
@@ -320,6 +335,7 @@ dependencies = [
     { name = "autopep8" },
     { name = "pandas" },
     { name = "pylint" },
+    { name = "pymummer" },
     { name = "requests" },
     { name = "tool" },
 ]
@@ -329,6 +345,7 @@ requires-dist = [
     { name = "autopep8", specifier = ">=2.3.1" },
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "pylint", specifier = ">=3.3.1" },
+    { name = "pymummer", specifier = ">=0.11.0" },
     { name = "requests", specifier = ">=2.32.3" },
     { name = "tool", specifier = ">=0.8.0" },
 ]
