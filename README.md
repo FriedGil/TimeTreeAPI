@@ -27,12 +27,10 @@ pip install timetreeapi
 ```
 
 ## Usage
-
-### Pairwise Class
-
-The `Pairwise` class processes raw API output to provide structured data for pairwise taxonomic comparisons.
-
-#### Attributes
-- `taxon_a_id` and `taxon_b_id`: IDs of the two taxa.
-- `scientific_name_a` and `scientific_name_b`: Scientific names of the taxa.
-- `all_total`, `precomputed_age`, `precomputed_ci_low`, `precomputed_ci_high`, and `adjusted_age`: Various age metrics.
+```python
+import timetree
+human_chimp_pw = get_pairwise(get_taxon("Homo sapiens").taxon_id, get_taxon("Pan Troglodytes").taxon_id)
+print(human_chimp_pw.precomputed_age)
+chordata_timeline = get_timeline(get_taxon("Chordata"))
+print(chordata_timeline.get_taxa_by_rank('family'))
+```
