@@ -33,7 +33,7 @@ def get_pairwise(taxon_id_a: int, taxon_id_b: int) -> Pairwise:
         raise ValueError(f"Error processing the response: {e}")
 
 
-def get_species(taxon: str) -> Taxon:
+def get_taxon(taxon: str) -> Taxon:
     """
     Creates a Taxon object for a given taxon name.
 
